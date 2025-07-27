@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Bookings Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="icon">📅</span>
+                Live Bookings Viewer
+            </h1>
+            <div class="status">
+                <div class="status-indicator" id="statusIndicator"></div>
+                <span id="statusText">Connecting...</span>
+            </div>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalBookings">0</div>
+                <div class="stat-label">Total Bookings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalGuests">0</div>
+                <div class="stat-label">Total Guests</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="lastBookingTime">--</div>
+                <div class="stat-label">Last Booking</div>
+            </div>
+        </div>
+
+        <div class="bookings-header">
+            <h2>Recent Bookings</h2>
+            <div class="live-indicator">
+                <div class="pulse"></div>
+                Live
+            </div>
+        </div>
+
+        <div class="bookings-container">
+            <div id="bookingsList" class="bookings-list">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Waiting for bookings...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
